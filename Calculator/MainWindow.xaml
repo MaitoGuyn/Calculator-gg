@@ -11,14 +11,33 @@
         <Style TargetType="Button" x:Key="BtSt">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate>
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="#f6e5eb">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
+            <Setter Property="FontFamily" Value="Times New Roman"/>
             <Setter Property="Background" Value="#f6e5eb"/>
             <Setter Property="Margin" Value="6"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="BtSt2">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="#D8BFD8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Background" Value="#f6e5eb"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="FontSize" Value="22"/>
         </Style>
     </Window.Resources>
 
@@ -44,86 +63,36 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
+            <Button Content="SIN(X)" Style="{StaticResource BtSt}" />
+            <Button Content="COS(X)" Style="{StaticResource BtSt}" Grid.Column="1" />
+            <Button Content="TG(X)" Style="{StaticResource BtSt}" Grid.Column="2" />
+            <Button Content="SQRT(X)" Style="{StaticResource BtSt}" Grid.Column="3" />
+            <Button Content="CTG(X)" Style="{StaticResource BtSt}" Grid.Column="4" />
 
-            <Button  Margin="6">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template> </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Column="1">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Column="2">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Column="3">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Column="4">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+            <Button Content="1" Style="{StaticResource BtSt2}" Grid.Row="1" />
+            <Button Content="2" Style="{StaticResource BtSt2}" Grid.Row="1" Grid.Column="1" />
+            <Button Content="3" Style="{StaticResource BtSt2}" Grid.Row="1" Grid.Column="2" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="1" Grid.Column="3" />
+            <Button Content="Х²" Style="{StaticResource BtSt}" Grid.Row="1" Grid.Column="4" />
 
-            <Button Background="#f6e5eb" Margin="6" Grid.Row="1">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Row="1" Grid.Column="1">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Row="1" Grid.Column="2">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="#f6e5eb" Margin="6" Grid.Row="1" Grid.Column="3">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10" Background="#f6e5eb"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="1" Grid.Column="4"></Button>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="2"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="2" Grid.Column="1" />
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="2" Grid.Column="2" />
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="2" Grid.Column="3"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="2" Grid.Column="4"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="3"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="3" Grid.Column="1"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="3" Grid.Column="2"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="3" Grid.Column="3"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="3" Grid.Column="4"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="4"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="4" Grid.Column="1"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="4" Grid.Column="2"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="4" Grid.Column="3"/>
-            <Button Style="{StaticResource BtSt}" Background="#f6e5eb" Margin="6" Grid.Row="4" Grid.Column="4"/>
+            <Button Content="4" Style="{StaticResource BtSt2}" Grid.Row="2" />
+            <Button Content="5" Style="{StaticResource BtSt2}" Grid.Row="2" Grid.Column="1" />
+            <Button Content="6" Style="{StaticResource BtSt2}" Grid.Row="2" Grid.Column="2" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="2" Grid.Column="3" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="2" Grid.Column="4" />
+
+            <Button Content="7" Style="{StaticResource BtSt2}" Grid.Row="3" />
+            <Button Content="8" Style="{StaticResource BtSt2}" Grid.Row="3" Grid.Column="1" />
+            <Button Content="9" Style="{StaticResource BtSt2}" Grid.Row="3" Grid.Column="2" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="3" Grid.Column="3" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="3" Grid.Column="4" />
+
+            <Button Style="{StaticResource BtSt}" Grid.Row="4" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="4" Grid.Column="1" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="4" Grid.Column="2" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="4" Grid.Column="3" />
+            <Button Style="{StaticResource BtSt}" Grid.Row="4" Grid.Column="4" />
 
         </Grid>
     </Grid>
