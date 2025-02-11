@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Calculator
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -187,11 +184,9 @@ namespace Calculator
         {
             string str = TxtBox.Text;
             char[] x = str.ToArray();
-            string[] str1 = str.Split('+','-','*','/');
             string[] y = new string[x.Length];
             List<string> lst = new List<string>();
             
-
             float rslt = 0;
             int i = 0;
             int j = 0;
@@ -223,37 +218,36 @@ namespace Calculator
                 y2[b] = lst[b];
             }
 
-            foreach ( string y1 in y2)
-            {
-                MessageBox.Show(y1);
-            }
-            //while ( i <= x.Length - 1)
-            //{
-               
-            //    if (x[i] == '+')
-            //    {
-            //        float x1 = float.Parse((char.IsDigit(x[i - 1])).ToString());
-            //        float x2 = float.Parse((str1[i + 1]).ToString());
-            //        rslt += x1 + x2;
-            //        str1[i + 1] = rslt.ToString();
-                    
-            //    }
-            //    else if (x[i] == '-')
-            //    {
-            //        rslt += (x[i - 1] - x[i + 1]);
-            //    }
-            //    else if (x[i] == '*')
-            //    {
-            //        rslt += (x[i - 1] * x[i + 1]);
-            //    }
-            //    else if (x[i] == '/')
-            //    {
-            //        rslt += (x[i - 1] / x[i + 1]);
-            //    }
-            //    i++;
-            //}
+            int g = 1;
             
-            //TxtBox.Text = rslt.ToString();
+
+            while (g <= y2.Length - 1)
+            {
+                rslt = float.Parse(y2[g - 1]);
+                if (y2[g] == "+")
+                {
+                    float x2 = float.Parse(y2[g + 1]);
+                    rslt += x2;
+                }
+                else if (y2[g] == "-")
+                {
+                    float x2 = float.Parse(y2[g + 1]);
+                    rslt -= x2;
+                }
+                else if (y2[g] == "*")
+                {
+                    float x2 = float.Parse(y2[g + 1]);
+                    rslt *= x2;
+                }
+                else if (y2[g] == "/")
+                {
+                    float x2 = float.Parse(y2[g + 1]);
+                    rslt /= x2;
+                }
+                g++;
+            }
+
+            TxtBox.Text = rslt.ToString();
         }
     }
 }
