@@ -186,8 +186,9 @@ namespace Calculator
             char[] x = str.ToArray();
             string[] y = new string[x.Length];
             List<string> lst = new List<string>();
+            float reslt = 0;
+
             
-            float rslt = 0;
             int i = 0;
             int j = 0;
 
@@ -218,36 +219,29 @@ namespace Calculator
                 y2[b] = lst[b];
             }
 
-            int g = 1;
-            
-
-            while (g <= y2.Length - 1)
+            for(int w = 1;w <= y2.Length; w++)
             {
-                rslt = float.Parse(y2[g - 1]);
-                if (y2[g] == "+")
+                if (y2[w] == "*" || y2[w] == "/")
                 {
-                    float x2 = float.Parse(y2[g + 1]);
-                    rslt += x2;
+                    float a = float.Parse(y2[w - 1]);
+                    float b = float.Parse(y2[w + 1]);
+                    float result = (y2[w] == "*") ? a * b : a / b;
+                    y2[w - 1] = result.ToString();
+                    y2[w] = "+";
+                    y2[w - 1] = "0";
                 }
-                else if (y2[g] == "-")
+            }
+            reslt = float.Parse(y2[0]);
+            for (int w = 1; w <= y2.Length; w++)
+            {
+                if (y2[w] == "*" || y2[w] == "/")
                 {
-                    float x2 = float.Parse(y2[g + 1]);
-                    rslt -= x2;
+                    float b = float.Parse(y2[w + 1]);
+                    reslt = (y2[w] == "+") ? reslt + b : reslt - b;
                 }
-                else if (y2[g] == "*")
-                {
-                    float x2 = float.Parse(y2[g + 1]);
-                    rslt *= x2;
-                }
-                else if (y2[g] == "/")
-                {
-                    float x2 = float.Parse(y2[g + 1]);
-                    rslt /= x2;
-                }
-                g++;
             }
 
-            TxtBox.Text = rslt.ToString();
+            TxtBox.Text = reslt.ToString();
         }
     }
 }
